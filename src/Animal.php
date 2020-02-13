@@ -13,23 +13,29 @@ abstract class Animal
         $this > name =$_name;
     }
 
-    public function noise(){
-        return $this->getNoise();
-    }
-
-    public function echoData() {
-        echo "Cet animal est appellé {$this -> _name} ";
-    }
 
     // accesseur ( pour acceder a name qui est privée )
-    private function name() {
+    private function name()
+    {
         return $this ->_name;
     }
 
-    abstract protected function getNoise() : string {
+
+    abstract protected function getNoise() : string
+    {
         return "Cri de l'animal";
     }
 
 
+    public function noise()
+    {
+        return $this->getNoise();
+    }
+
+
+    public function echoData()
+    {
+        echo "Cet animal est appellé {$this -> _name} ";
+    }
 
 }
