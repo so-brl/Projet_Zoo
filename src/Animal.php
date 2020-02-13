@@ -8,34 +8,45 @@ abstract class Animal
 {
     private $_name;
 
-    public function __construct($_name) // Pas besoin car se fait en autonomatique
+
+
+    /**
+     * Animal constructor.
+     * @param $_name
+     */
+    public function __construct($_name)
     {
-        $this > name =$_name;
+        $this->_name = $_name;
     }
 
 
     // accesseur ( pour acceder a name qui est privée )
-    private function name()
+    /**
+     * @return mixed
+     */
+    public function getName()
     {
-        return $this ->_name;
+        echo " Je m'appelle " . $this->_name ;
     }
 
 
-    abstract protected function getNoise() : string
+    abstract protected function getNoise() : String ;
+
+
+    public function type()
     {
-        return "Cri de l'animal";
+        echo ", je suis " .$this->getType();
     }
 
 
     public function noise()
     {
-        return $this->getNoise();
+        echo " et je fais ".$this->getNoise(). ". ";
     }
 
 
-    public function echoData()
-    {
-        echo "Cet animal est appellé {$this -> _name} ";
-    }
+
+
+
 
 }
