@@ -25,7 +25,7 @@ class Enclosure
     public function __toString() : String
     {
         foreach ($this->animals as $animal) {
-            echo $animal->getName() . ' ' . $animal->noise();
+            echo "- Je suis ".$animal->getName() .' ' .  $animal->noise() . '<br>';
         }
 
         return '';

@@ -15,7 +15,7 @@ class Fish extends Animal implements CanSwim
      */
     protected function getNoise(): String
     {
-        return "bloubloublou";
+        return " <strong> bloubloublou</strong>";
     }
 
 }

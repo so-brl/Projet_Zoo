@@ -1,22 +1,55 @@
 <?php
 
-
 require __DIR__ . '/vendor/autoload.php';
 
-$animals = [
-    \App\Animals\Fish::class => 5,
-    \App\Animals\Zebra::class => 1
+//$animals = [
+//    \App\Animals\Fish::class => 5,
+//    \App\Animals\BubbleFish::class => 3,
+//    \App\Animals\CatFish::class => 2,
+//    \App\Animals\ClownFish::class => 1,
+//    \App\Animals\Elephant::class => 2,
+//    \App\Animals\Zebra::class => 1,
+//    \App\Animals\Parrot::class => 10,
+//    \App\Animals\Dove::class => 2,
+//];
+//
+//
+//foreach ($animals as $key => $value) {
+//
+//    for ($i = 0; $i < $value; $i++) {
+//        $object = new $key('Animal ' . ($i + 1));
+//        \App\Zoo::addAnimal($object);
+//
+//    }
+//}
+
+
+$animalsTeam1 = [
+    [5, \App\Animals\Fish::class, 'Poisson'],
+    [3, \App\Animals\BubbleFish::class, 'Poisson-Lune'],
+    [2, \App\Animals\CatFish::class, 'Poisson-Chat'],
+    [1, \App\Animals\ClownFish::class, 'Poisson-Clown'],
+    [2, \App\Animals\Elephant::class, 'Eléphant'],
+    [1, \App\Animals\Zebra::class, 'Zèbre'],
+    [10, \App\Animals\Parrot::class, 'Perroquet'],
+    [2, \App\Animals\Dove::class, 'Colombes']
 ];
 
-foreach ($animals as $key => $value) {
 
-    for ($i = 0; $i < $value; $i++) {
-        $object = new $key($key . ($i + 1));
-        \App\Zoo::addAnimal($object);
+function creatTableauAnimals($data)
+{
+    $animals = [];
+    for ($i = 0; $i < count($data); $i++) {
+        for ($j = 0; $j < $data[$i][0]; $j++) {
+            $animals[$i][$j] = new $data[$i][1]($data[$i][2] .' '. $j);
+            \App\Zoo::addAnimal($animals[$i][$j]);
+        }
     }
+    return $animals;
 }
 
-
+creatTableauAnimals($animalsTeam1);
+\App\Zoo::visitTheZoo();
 
 
 

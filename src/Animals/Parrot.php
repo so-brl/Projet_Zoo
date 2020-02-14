@@ -5,11 +5,12 @@ namespace App\Animals;
 
 
 use App\Animal;
+use App\Interfaces\CanFly;
 
-class Parrot extends Animal
+class Parrot extends Animal implements CanFly
 {
 
-    protected $_noise ="coco";
+    protected $_noise ="<strong> coco</strong>";
 
     /**
      * @return String
