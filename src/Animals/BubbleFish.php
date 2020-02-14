@@ -4,7 +4,17 @@
 namespace App\Animals;
 
 
-class BubbleFish
+use App\Animal;
+
+class BubbleFish extends Animal
 {
+
+    protected $_noise = '';
+
+    protected function getNoise() : String
+    {
+        return $this -> _noise ;
+    }
+
 
 }

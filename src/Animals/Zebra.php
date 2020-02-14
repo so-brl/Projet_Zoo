@@ -5,21 +5,35 @@ namespace App\Animals;
 
 
 use App\Animal;
+use App\Interfaces\CanWalk;
 
-class Zebra extends Animal
+class Zebra extends Animal implements CanWalk
 {
-    protected $_type = "un zèbre";
-    protected $_noise ="hiiiii";
 
-
-    protected function getNoise() : String
+    /**
+     * @return String
+     */
+    protected function getNoise(): String
     {
-        return $this -> _noise ;
+        return "hiiiii";
     }
 
-
-    public function getType(): string
-    {
-        return $this->_type;
-    }
 }
+
+
+
+
+//class Zebra extends Animal
+//{
+//
+//    protected $_noise ="hiiiii";
+//
+//    /**
+//     * @return String
+//     */
+//    protected function getNoise() : String
+//    {
+//        return $this -> _noise ;
+//    }
+//
+//}

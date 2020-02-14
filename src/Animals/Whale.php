@@ -8,9 +8,11 @@ use App\Animal;
 
 class Whale extends Animal
 {
-    protected $_type = "une baleine";
-    protected $_noise ="splash";
 
+    protected $_noise ="splash";
+    /**
+     * @return String
+     */
 
     protected function getNoise() : String
     {
@@ -18,8 +20,4 @@ class Whale extends Animal
     }
 
 
-    public function getType(): string
-    {
-        return $this->_type;
-    }
 }

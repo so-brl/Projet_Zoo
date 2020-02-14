@@ -6,47 +6,86 @@ namespace App;
 
 abstract class Animal
 {
-    private $_name;
 
 
+    /**
+     * @var String $name
+     */
+    private $name;
 
     /**
      * Animal constructor.
-     * @param $_name
+     *
+     * @param String $name
      */
-    public function __construct($_name)
+    public function __construct(String $name)
     {
-        $this->_name = $_name;
+        $this->name = $name;
     }
 
-
-    // accesseur ( pour acceder a name qui est privée )
     /**
-     * @return mixed
+     * @return String
      */
-    public function getName()
+    abstract protected function getNoise() : String;
+
+    /**
+     * @return String
+     */
+    public function noise() : String
     {
-        echo " Je m'appelle " . $this->_name ;
+        return $this->getNoise();
     }
 
-
-    abstract protected function getNoise() : String ;
-
-
-    public function type()
+    /**
+     * @return String
+     */
+    public function getName(): String
     {
-        echo ", je suis " .$this->getType();
+        return $this->name;
     }
-
-
-    public function noise()
-    {
-        echo " et je fais ".$this->getNoise(). ". ";
-    }
-
-
-
-
-
 
 }
+//    /**
+//     * @var String $name
+//     */
+//    private $_name;
+//
+//
+//    /**
+//     * Animal constructor.
+//     * @param String $name
+//     */
+//    public function __construct(String $name)
+//    {
+//        $this->name = $name;
+//    }
+//
+//
+//
+//    /**
+//     * @return String
+//     */
+//    public function getName(): String
+//    {
+//        return $this->_name;
+//    }
+//
+//
+//    /**
+//     * @return String
+//     */
+//    abstract protected function getNoise() : String ;
+//
+//
+//    /**
+//     * @return String
+//     */
+//    public function noise()
+//    {
+//        return  $this->getNoise();
+//    }
+
+
+
+
+
